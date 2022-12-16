@@ -5,7 +5,13 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "compile": "tsc"
+    "build": "tsc",
+    "compile": "tsc --pretty",
+    "watch": "tsc -w",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "upgrade": "npm i cdktf@latest cdktf-cli@latest",
+    "upgrade:next": "npm i cdktf@next cdktf-cli@next"
   },
   "dependencies": {
     "aws-sdk": "^2.1277.0",
