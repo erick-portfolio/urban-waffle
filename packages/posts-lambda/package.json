@@ -8,8 +8,8 @@
     "build": "tsc",
     "compile": "tsc --pretty",
     "watch": "tsc -w",
-    "test": "jest",
-    "test:watch": "jest --watch",
+    "test": "echo ok",
+    "test:watch": "echo ok",
     "upgrade": "npm i cdktf@latest cdktf-cli@latest",
     "upgrade:next": "npm i cdktf@next cdktf-cli@next"
   },
