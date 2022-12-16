@@ -48,6 +48,11 @@ jobs:
       run: |
         npx lerna run get
 
+    - name: Build
+      run: |
+        npx lerna run build
+
+
     - name: Synth
       run: |
         npx lerna run synth
