@@ -25,11 +25,10 @@ class MyStack extends TerraformStack {
 
     new GithubProvider(this, "github", {
       token: process.env.GH_ACCESS_TOKEN,
-      organization: "erick-portfolio"
     });
 
     // new OranizationRepository(this, "organization_repository", "test", "NotErickG", process.env.TFE_TOKEN);
-    new OranizationRepository(this, "organization_repository", "test");
+    new OranizationRepository(this, "organization_repository", "test", process.env.TFE_TOKEN);
 
     // Use the workspace data element
     const organizationWorkspaceOutputs = new DataTfeWorkspace(this, "bootstrap_workspace",{
