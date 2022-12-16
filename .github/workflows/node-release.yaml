@@ -59,7 +59,7 @@ jobs:
         npx lerna run plan
 
     - name: Deploy
-      if: github.ref == 'refs/heads/master'
+      # if: github.ref == 'refs/heads/master'
       run: |
         npx lerna run deploy
 
