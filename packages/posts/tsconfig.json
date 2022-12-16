@@ -21,8 +21,12 @@
     "strictPropertyInitialization": true,
     "stripInternal": true,
     "esModuleInterop": true,
-    "target": "ES2018"
+    "target": "ES2018",
+    "outDir": "./dist",
   },
   "include": ["**/*.ts"],
-  "exclude": ["node_modules", "frontend/code"]
+  "exclude": [
+    "node_modules",
+    "cdktf.out"
+  ]
 }
