@@ -32,8 +32,8 @@ class MyStack extends TerraformStack {
       owner: "erick-portfolio"
     });
 
-    new OranizationRepository(this, "default_app", {
-      name: "default-app",
+    new OranizationRepository(this, "posts", {
+      name: "posts",
       tfeOrganization: "NotErickG",
       tfeToken: process.env.TFE_TOKEN,
       tfeOrganizationToken: process.env.TFE_ORGANIZATION_TOKEN,
