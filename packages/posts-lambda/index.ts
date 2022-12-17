@@ -40,7 +40,7 @@ export async function handler(
     if (path === "/posts") {
       switch (method) {
         case "GET":
-          return jsonResponse(await getAllPosts(event));
+          return jsonResponse(await getAllPosts());
         case "POST":
           return jsonResponse(await postPost(event));
         case "OPTIONS":
@@ -56,7 +56,7 @@ export async function handler(
       const matches = /^\/posts\/([^\/]+)\/detail$/.exec(path);
       if (matches) {
         if (method === "GET") {
-          return jsonResponse(await getPost(matches[1], event));
+          return jsonResponse(await getPost(matches[1]));
         } else {
           return jsonResponse({
             statusCode: 405,
@@ -79,9 +79,7 @@ export async function handler(
   }
 }
 
-export async function getAllPosts(
-  event: APIGatewayProxyEventV2
-): Promise<APIGatewayProxyStructuredResultV2Json> {
+export async function getAllPosts(): Promise<APIGatewayProxyStructuredResultV2Json> {
   return {
     body: {
       // TODO: do we really want to wrap this in data? we should make it consistent with getPost
@@ -90,10 +88,7 @@ export async function getAllPosts(
   };
 }
 
-export async function getPost(
-  id: string,
-  event: APIGatewayProxyEventV2
-): Promise<APIGatewayProxyStructuredResultV2Json> {
+export async function getPost(id: string): Promise<APIGatewayProxyStructuredResultV2Json> {
   return {
     body: await storage.getPost(id),
   };

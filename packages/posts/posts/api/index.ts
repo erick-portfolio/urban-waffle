@@ -6,7 +6,7 @@ import { IamRolePolicyAttachment } from "@cdktf/provider-aws/lib/iam-role-policy
 import { LambdaFunction } from "@cdktf/provider-aws/lib/lambda-function";
 import { LambdaPermission } from "@cdktf/provider-aws/lib/lambda-permission";
 import { Apigatewayv2Api } from "@cdktf/provider-aws/lib/apigatewayv2-api";
-import path = require("path");
+import { join } from "path";
 
 const lambdaRolePolicy = {
   Version: "2012-10-17",
@@ -40,7 +40,7 @@ export class PostsApi extends Construct {
 
     // api lambda tf resources
     const code = new NodejsFunction(this, "code", {
-      path: path.join(__dirname, "../../node_modules/posts-lambda/index.ts"),
+      path: join(__dirname, "../../node_modules/posts-lambda/index.ts"),
     });
 
     // Create Lambda role
